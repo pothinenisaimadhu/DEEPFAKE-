@@ -1,0 +1,45 @@
+digraph {
+	A [label="Input Images"]
+	B [label="Resize (224, 224)"]
+	C [label="ToTensor & Normalize"]
+	D [label="Dataset Split"]
+	E [label="Train (80%)"]
+	F [label="Validation (10%)"]
+	G [label="Test (10%)"]
+	H [label="DataLoader (Batch Size = 32, Shuffle, num_workers=4)"]
+	I [label="Vision Transformer (ViT)"]
+	J [label="Patch Embedding"]
+	K [label="Multi-Head Self Attention"]
+	L [label="Transformer Encoder"]
+	M [label="Classification Head (2 classes)"]
+	N [label="Training Loop (20 Epochs)"]
+	O [label=CrossEntropyLoss]
+	P [label="AdamW Optimizer"]
+	Q [label="Mixed Precision (GradScaler)"]
+	R [label=Validation]
+	S [label="Best Model Selection"]
+	T [label="Test Evaluation"]
+	U [label="Final Test Accuracy"]
+	A -> B
+	B -> C
+	C -> D
+	D -> E
+	D -> F
+	D -> G
+	E -> H
+	F -> H
+	G -> H
+	H -> I
+	I -> J
+	J -> K
+	K -> L
+	L -> M
+	M -> N
+	N -> O
+	N -> P
+	N -> Q
+	N -> R
+	R -> S
+	S -> T
+	T -> U
+}
